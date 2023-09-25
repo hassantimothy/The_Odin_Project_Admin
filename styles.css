@@ -7,10 +7,6 @@
   --back-ground-color: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
   --transition-speed: 1s;
   --drawer-width: clamp(210px, 22vw, 325px);
-  --nav-bg-1: #f8f8f8;
-  --nav-color-1: #c9c9c9;
-  --nav-color-2: #62daff6e;
-  --blue-1: #084c61;
 
   --gh-avatar:  url("https://github.com/hassantimothy.png");
   --gh-avatar2: url("https://github.com/Archybella.png");
@@ -27,6 +23,7 @@
 body {
   background:#1f2937;
   width: 90vw;
+  min-width: 700px;
   height: 90vh;
   margin: 0 auto; /* Center the body horizontally within the viewport */
   display: grid;
@@ -104,15 +101,45 @@ a {
   padding-left: 10px;
   padding-top: 10px;
 }
+
+/* Main Content */
+
+.content {
+  grid-area: content;
+  transition: var(--transition-notDrawer);
+  background: var(--back-ground-color);
+  display: grid;
+  padding-top: 72px;
+  padding: 1rem;
+  padding-right: 1rem;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: min-content 1fr;
+  gap: 2rem;
+  z-index: 1;
+  grid-template-areas:
+    "projects announcements"
+    "projects trending";
+}
+
+
+.content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+} 
+
+
 /* Navbar Styling */
 .navbar {
+
   grid-area: nav;
   transition: var(--transition-notDrawer);
-  /* background-color: var(--back-ground-color);*/
-  background-color: #64748b;
+  /* background-color: var(--back-ground-color); */
+  background-color: #8578a3;
   padding: 1.5rem 3rem;
+  padding: 1px;
   position: sticky;
-  top: 0;
+  top: 0px;
  
 }
 
@@ -122,24 +149,38 @@ a {
   margin-bottom: 2.5rem;
 }
 
+.topNav > div{
+  border: solid 1px purple;
+}
+
+
+
 .search {
   display: flex;
   align-items: center;
   margin-right: auto;
   width: 100%;
+  
 }
 
 .search > input {
   display: inline-block;
-  border: 0;
-  background-color: var(--nav-color-1);
+  border: 0px;
+  background-color: rgb(211, 207, 207);
   padding: 0.5rem 1.5rem;
-  outline-color: var(--blue-1);
+  outline-color: rgb(15, 27, 15);
   margin-left: 1.25rem;
   border-radius: 5px;
   width: min(80%, 600px);
   margin-right: 20px;
 }
+
+.search > input:hover {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+
 
 .navbar .account {
   display: flex;
@@ -166,29 +207,56 @@ img {
 
 .bottom {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around ;
   align-items: center;
+  padding: 5px;
+  gap: 4rem;
+
+}
+
+
+.bottom > div{
+  border: solid 1px rgb(255, 7, 7);
 }
 
 .profile {
+
   display: flex;
   align-items: center;
+  flex-shrink: 1;
   gap: 1rem;
+  flex-flow: 1;
+
+
+
 }
 .profile .gh-avatar {
-  width: 75px;
-  height: 75px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  width: 4rem;
+  height: 4rem;
 }
 
 .greeting {
-  font-weight: 800;
-  margin-bottom: 0.4rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 .profile .name {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
+.profile-name > .name{
+  font-size: 1.4rem;
+  font-weight: 500;
+
+}
+.account > .name {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  padding-right: 30px;
+}
 
 /* Buttons styling */
 
@@ -196,17 +264,18 @@ img {
 .buttons {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .btn {
+  color: aliceblue;
   background-color: #19335d ;
-  color: var(--text-secondary);
-  font-weight: 500;
+  font-weight: 300;
   padding: 0.5rem 1.8rem;
-  border-radius: 7px;
-  font-size: 20px;
+  border-radius: 10px;
+  font-size: 1rem;
   border: 1px solid gray;
   cursor: pointer;
 }
@@ -218,39 +287,11 @@ img {
   
 }
 
-/* Main Content */
-
-.content {
-  grid-area: content;
-  transition: var(--transition-notDrawer);
-  background: var(--back-ground-color);
-  display: grid;
-  /* padding: 1rem; */
-  padding-right: 1rem;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: min-content 1fr;
-  gap: 2rem;
-  grid-template-areas:
-    "projects announcements"
-    "projects trending";
-}
-
-.content > div{
-  border: #084c61 solid 1px;
-}
-
-.content h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.8rem;
-} 
-
-
 /* Card styling */
 
 
 .card {
-  
+  position: relative;
   background-color: rgba(45, 187, 187, 0.459);
   padding: 2rem;
   border-radius: 0.6rem;
@@ -266,6 +307,7 @@ img {
 }
 
 .projects .cards {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 250px;
@@ -275,7 +317,6 @@ img {
 
 .projects .card {
   background: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
-  /* background-color: var(--nav-color-2); */
   display: flex;
   flex-direction: column;
 }
@@ -292,6 +333,7 @@ img {
 }
 
 .projects .icons {
+  position: relative;
   margin-top: auto;
   align-self: flex-end;
   display: flex;
@@ -300,6 +342,22 @@ img {
   align-items: center;
   padding-bottom: 0px;
   padding-right: 0px;
+}
+.card .icons img {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 1.4rem;
+  height: 1.4rem;
+  
+}
+
+.card .icons img:hover{
+  opacity: 0.7;
+  transform: scale(.9);
+
 }
 
 
@@ -400,8 +458,8 @@ img {
 
 img[src$=".svg"] {
  
-  width: 2rem; 
-  height: 2rem;
+  width: 2.5rem; 
+  height: 2.5rem;
   
 }
 
@@ -412,3 +470,4 @@ img[src$=".svg"]:hover{
 
 
 }
+

@@ -1,22 +1,22 @@
 :root {
+  
   font-size: 16px;
   font-family: "Ubuntu Condensed", sans-serif;
   --text-primary: black;
   --text-secondary: white;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
+  --back-ground-color: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
   --transition-speed: 1s;
-  --drawer-color: #0ea5e9;
   --drawer-width: clamp(210px, 22vw, 325px);
   --nav-bg-1: #f8f8f8;
   --nav-color-1: #c9c9c9;
   --nav-color-2: #62daff6e;
   --blue-1: #084c61;
-  --gh-avatar: url("https://github.com/hassantimothy.png");
-  --gh-avatar2: url("https://github.com/MeFerdi.png");
-  --gh-avatar3: url("https://github.com/INNOCENTMUSAKHI.png");
-  --gh-avatar4: url("https://github.com/Archybella.png");
-  --gh-avatar5: url("https://github.com/Sirtuns.png");
+
+  --gh-avatar:  url("https://github.com/hassantimothy.png");
+  --gh-avatar2: url("https://github.com/Archybella.png");
+  --gh-avatar3: url("https://github.com/MeFerdi.png");
+  --gh-avatar4: url("https://github.com/INNOCENTMUSAKHI.png");
+
   --content-gray: rgb(235, 235, 235);
   --transition-notDrawer: margin-left 0.4s ease-in;
   --transition-drawer: width 0.4s ease-in;
@@ -37,7 +37,7 @@ body {
   grid-template-columns: 5rem 1fr 1fr 1fr;
 }
 .drawer {
-  background-color: var(--drawer-color);
+  background-color: #364252;
   width: 5rem;
   position: fixed;
   transition: var(--transition-drawer);
@@ -108,11 +108,12 @@ a {
 .navbar {
   grid-area: nav;
   transition: var(--transition-notDrawer);
-  background-color: var(--nav-bg-1);
+  /* background-color: var(--back-ground-color);*/
+  background-color: #64748b;
   padding: 1.5rem 3rem;
-  border-bottom: 2px solid rgb(219, 219, 219);
   position: sticky;
   top: 0;
+ 
 }
 
 .topNav {
@@ -187,6 +188,11 @@ img {
   font-size: 1.6rem;
   font-weight: 800;
 }
+
+
+/* Buttons styling */
+
+
 .buttons {
   display: flex;
   justify-content: flex-end;
@@ -195,9 +201,9 @@ img {
 }
 
 .btn {
-  background-color: var(--drawer-color);
+  background-color: #19335d ;
   color: var(--text-secondary);
-  font-weight: 800;
+  font-weight: 500;
   padding: 0.5rem 1.8rem;
   border-radius: 7px;
   font-size: 20px;
@@ -206,7 +212,7 @@ img {
 }
 
 .btn:hover{
-  background-color: #084c61;
+  background-color: #076885;
   color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   
@@ -217,8 +223,7 @@ img {
 .content {
   grid-area: content;
   transition: var(--transition-notDrawer);
-  background: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
-  /* background-color: var(--content-gray); */
+  background: var(--back-ground-color);
   display: grid;
   /* padding: 1rem; */
   padding-right: 1rem;
@@ -235,18 +240,26 @@ img {
 }
 
 .content h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 500;
   margin-bottom: 0.8rem;
-}
+} 
+
+
+/* Card styling */
+
 
 .card {
+  
   background-color: rgba(45, 187, 187, 0.459);
   padding: 2rem;
   border-radius: 0.6rem;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 /0.1);
   max-width: 30vw;
 }
+
+
+
 
 .projects {
   grid-area: projects;
@@ -261,7 +274,8 @@ img {
 }
 
 .projects .card {
-  background-color: var(--nav-color-2);
+  background: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
+  /* background-color: var(--nav-color-2); */
   display: flex;
   flex-direction: column;
 }
@@ -287,6 +301,9 @@ img {
   padding-bottom: 0px;
   padding-right: 0px;
 }
+
+
+/* Announcement styling */
 
 .announcements {
   grid-area: announcements;
@@ -321,6 +338,9 @@ img {
 .announcement + .announcement {
   border-top: rgb(115, 115, 115) 1px solid;
 }
+
+
+/* Trending styling */
 
 .trending {
   grid-area: trending;
@@ -379,15 +399,16 @@ img {
 
 
 img[src$=".svg"] {
-  /* Your CSS styles here */
-  width: 2em; /* Example: Set a width */
-  height: 2em; /* Example: Set a height */
-  fill: red; /* Example: Change the fill color for SVGs */
+ 
+  width: 2rem; 
+  height: 2rem;
+  
 }
 
 img[src$=".svg"]:hover{
   opacity: 0.7;
   transform: scale(1.1);
+
 
 
 }

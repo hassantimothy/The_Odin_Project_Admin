@@ -1,246 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
-
-</head>
-<body>
-
-    <!-- app drawer -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- App Drawer -->
     <div class="drawer">
-        <div class="dashboard menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/view-dashboard.svg" alt="">
-            <h1>Dashboard</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/home-circle-outline.svg" alt="">
-            <h1>Home</h1>
-
-        </div> <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/card-account-details-outline.svg" alt="">
-            <h1>Profile</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/message.svg" alt="">
-            <h1>Messages</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/clock-outline.svg" alt="">
-            <h1>History</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/account-multiple-plus.svg" alt="">
-            <h1>Task</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/account-group.svg" alt="">
-            <h1>Community</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/cog-box.svg" alt="">
-            <h1>Settings</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/face-agent.svg" alt="">
-            <h1>Support</h1>
-
-        </div>
-        <div class="menuItems"> 
-            <img src="/home/hassan/The_Odin_Project_Admin/icons/shield-check-outline.svg" alt="">
-            <h1>Privacy</h1>
-
-        </div>
+      <div class="dashboard menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/view-dashboard.svg" alt="" />
+        <h1>Dashboard</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/home-circle-outline.svg" alt="" />
+        <h1>Home</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/card-account-details-outline.svg" alt="" />
+        <h1>Profile</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/message.svg" alt="" />
+        <h1>Messages</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/clock-outline.svg" alt="" />
+        <h1>History</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/note-multiple.svg" alt="" />
+        <h1>Tasks</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/account-group.svg" alt="" />
+        <h1>Communities</h1>
+      </div>
+      <!-- Need extra spacing, so nth child -->
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/cog-box.svg" alt="" />
+        <h1>Settings</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/message-question-outline.svg" alt="" />
+        <h1>Support</h1>
+      </div>
+      <div class="menuItem">
+        <img src="/home/hassan/The_Odin_Project_Admin/icons/shield-check-outline.svg" alt="" />
+        <h1>Privacy</h1>
+      </div>
     </div>
 
-    <!-- nav bar -->
-
+    <!-- Navbar -->
     <div class="navbar">
-        <!-- top section -->
-        <div class="topnav">
-
-            <!-- search icon --><!-- search bar -->
-
-            <div class="search">
-                <div class="menuItem">
-                    <img src="/home/hassan/The_Odin_Project_Admin/icons/magnify.svg" alt="">
-                </div>
-                <input type="text" name="search" autocomplete="off">
-            </div>
-            <div class="account">
-                <div class="menuIcone">
-                    <img src="/home/hassan/The_Odin_Project_Admin/icons/bell-ring-outline.svg" alt="">
-                </div>
-                <div class="gh-avatar"></div>
-                <!-- avatar from github -->
-                <img src="" alt="">
-                <!-- user nam -->
-                <p class="name">hassan</p>
-
-            </div>
-
-
+      <!-- Top Section -->
+      <div class="topNav">
+        <!-- Search icon and search bar -->
+        <div class="search">
+          <div class="menuItem">
+            <img src="/home/hassan/The_Odin_Project_Admin/icons/magnify.svg" alt="" />
+          </div>
+          <input type="text" name="search" autocomplete="off" />
         </div>
-
-
-        <!-- bottom section -->
-        <div class="bottom">
-            <!-- profile detail -->
-            <div class="profile">
-                <div class="gh-avatar"></div>
-                <div class="profile-name">
-                    <p class="greeting"> Hi There!</p>
-                    <p class="name">Hassan <span class="user-name">@hassantimothy</span></p>
-                </div>
-                <!-- Buttons section -->
-                <div class="buttons">
-                    <button class="btn">New</button>
-                    <button class="btn">Upload</button>
-                    <button class="btn">Share</button>
-                </div>
-
-            </div>
+        <div class="account">
+          <div class="menuIcon">
+            <img src="/home/hassan/The_Odin_Project_Admin/icons/bell-ring-outline.svg" alt="" />
+          </div>
+          <!-- Avatar from Github -->
+          <div class="gh-avatar"></div>
+          <!-- Our username -->
+          <p class="name">hassan</p>
         </div>
-     </div>
+      </div>
 
-    <!-- main content -->
+      <!-- Bottom Section -->
+      <div class="bottom">
+        <!-- Profile details -->
+        <div class="profile">
+          <div class="gh-avatar"></div>
+          <div class="profile-name">
+            <p class="greeting">Hi there,</p>
+            <p class="name">hassan<span class="username">(@hassantimothy)</span></p>
+          </div>
+        </div>
+        <!-- Button section -->
+        <div class="buttons">
+          <button class="btn">New</button>
+          <button class="btn">Upload</button>
+          <button class="btn">Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
     <main class="content">
-        <div class="project">
-            <h3>Your Projects</h3>
+      <div class="projects">
+        <h3>Your Projects</h3>
 
-            <!-- section for all the cards -->
-            <div class="cards">
-                <div class="card">
-                    <h5 class="card-title">Project Name</h5>
-                    <p class="card-text">Explore our website to discover a world of information, products, and services at your fingertips. Welcome to your online destination</p>
-                    <div class="icones">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-title">Project Name</h5>
-                    <p class="card-text">Explore our website to discover a world of information, products, and services at your fingertips. Welcome to your online destination</p>
-                    <div class="icones">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-title">Project Name</h5>
-                    <p class="card-text">Explore our website to discover a world of information, products, and services at your fingertips. Welcome to your online destination</p>
-                    <div class="icones">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-title">Project Name</h5>
-                    <p class="card-text">Explore our website to discover a world of information, products, and services at your fingertips. Welcome to your online destination</p>
-                    <div class="icones">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-title">Project Name</h5>
-                    <p class="card-text">Explore our website to discover a world of information, products, and services at your fingertips. Welcome to your online destination</p>
-                    <div class="icones">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <h5 class="card-title">Project Name</h5>
-                    <p class="card-text">Explore our website to discover a world of information, products, and services at your fingertips. Welcome to your online destination</p>
-                    <div class="icones">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="">
-                        <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="">
-                    </div>
-                </div>
+        <!-- Section for all project cards -->
+        <div class="cards">
+          <!-- Each individual card, we need 6 cards -->
+          <div class="card">
+            <h5 class="card-title">Super Cool Project</h5>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ea
+              doloribus debitis reprehenderit? Sapiente, qui quaerat enim non.
+            </p>
+            <div class="icons">
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="" />
             </div>
+          </div>
+          <!-- Each individual card, we need 6 cards -->
+          <div class="card">
+            <h5 class="card-title">Less Cool Project</h5>
+            <p class="card-text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
+              officia nesciunt harum distinctio quia nisi ipsum reiciendis
+              aspernatur, sunt nam. Doloremque aliquam ut culpa harum non rem
+              in, cumque vitae!
+            </p>
+            <div class="icons">
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="" />
+            </div>
+          </div>
+          <!-- Each individual card, we need 6 cards -->
+          <div class="card">
+            <h5 class="card-title">Impossible App</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+              dicta. Pariatur libero a molestiae quod culpa deserunt quo quam
+              eos necessitatibus aliquid, nam fuga sed itaque magnam delectus ex
+              animi?
+            </p>
+            <div class="icons">
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="" />
+            </div>
+          </div>
+          <!-- Each individual card, we need 6 cards -->
+          <div class="card">
+            <h5 class="card-title">Easy Peasy App</h5>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ea
+              doloribus debitis reprehenderit? Sapiente, qui quaerat enim non.
+            </p>
+            <div class="icons">
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="" />
+            </div>
+          </div>
+          <!-- Each individual card, we need 6 cards -->
+          <div class="card">
+            <h5 class="card-title">Ad Blocker</h5>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ea
+              doloribus debitis reprehenderit? Sapiente, qui quaerat enim non.
+            </p>
+            <div class="icons">
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="" />
+            </div>
+          </div>
+          <!-- Each individual card, we need 6 cards -->
+          <div class="card">
+            <h5 class="card-title">Money Maker</h5>
+            <p class="card-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ea
+              doloribus debitis reprehenderit? Sapiente, qui quaerat enim non.
+            </p>
+            <div class="icons">
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/star-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/eye-plus-outline.svg" alt="" />
+              <img src="/home/hassan/The_Odin_Project_Admin/icons/source-branch.svg" alt="" />
+            </div>
+          </div>
         </div>
-        <!-- side contenet -->
+      </div>
+      <!-- Side content - Announcements and trending-->
 
-        <!-- announcements -->
-        <div class="announcements">
+      <!-- Announcements -->
+      <div class="announcements">
+        <ul class="card">
+          <!-- List of individual announcements -->
+          <li class="announcement">
+            <h5 class="card-title">Site Maintenance</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              veritatis commodi, sint dolore ex quidem mollitia dignissimos
+              omnis odio aliquam atque repudiandae quo ducimus rerum accusantium
+              voluptatem ab suscipit quis.
+            </p>
+          </li>
+          <li class="announcement">
+            <h5 class="card-title">Community Share Day</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              veritatis commodi, sint dolore ex quidem mollitia dignissimos
+              omnis odio aliquam atque repudiandae quo ducimus rerum accusantium
+              voluptatem ab suscipit quis.
+            </p>
+          </li>
+          <li class="announcement">
+            <h5 class="card-title">Updated Privacy Policy</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              veritatis commodi, sint dolore ex quidem mollitia dignissimos
+              omnis odio aliquam atque repudiandae quo ducimus rerum accusantium
+              voluptatem ab suscipit quis.
+            </p>
+          </li>
+        </ul>
+      </div>
 
-            <!-- list of individual announcements  -->
-            <ul>
-                <li class="announcement">
-                    <h5 class="card-title">Site maintenance</h5>
-                    <p>Exciting News Alert: Get ready to be blown away as we unveil a game-changing update that will redefine your online experience. Stay tuned</p>
-                </li>
-                <li class="announcement">
-                    <h5 class="card-title">Community Share Day</h5>
-                    <p>Exciting News Alert: Get ready to be blown away as we unveil a game-changing update that will redefine your online experience. Stay tuned</p>
-                </li>
-                <li class="announcement">
-                    <h5 class="card-title">Updated Privacy Policy</h5>
-                    <p>Exciting News Alert: Get ready to be blown away as we unveil a game-changing update that will redefine your online experience. Stay tuned</p>
-                </li>
-            </ul>
-        </div>
-
-
-        <!-- Trending -->
-        <div class="trending">
-            <h3>Trending</h3>
-            <ul class="card">
-                <li class="trend-1">
-                    <div class="gh-avatar2"></div>
-                    <div class="account">
-                        <p class="username">@hassantimothy</p>
-                        <p class="name-card">World Peace Builder</p>
-                    </div>
-                </li><li class="trend-2">
-                    <div class="gh-avatar3"></div>
-                    <div class="account">
-                        <p class="username">@hassantimothy</p>
-                        <p class="name-card">World Peace Builder</p>
-                    </div>
-                </li>
-                <li class="trend-3">
-                    <div class="gh-avatar4"></div>
-                    <div class="account">
-                        <p class="username">@hassantimothy</p>
-                        <p class="name-card">World Peace Builder</p>
-                    </div>
-                </li>
-                <li class="trend-4">
-                    <div class="gh-avatar5"></div>
-                    <div class="account">
-                        <p class="username">@hassantimothy</p>
-                        <p class="name-card">World Peace Builder</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-
+      <!-- Trending Section -->
+      <div class="trending">
+        <h3>Trending</h3>
+        <ul class="card">
+          <!-- List of all trending people -->
+          <li class="trend trend-1">
+            <div class="gh-avatar2"></div>
+            <div class="account">
+              <p class="username">@MeFerdi</p>
+              <p class="name card-text">World Peace Builder</p>
+            </div>
+          </li>
+          <li class="trend trend-2">
+            <div class="gh-avatar4"></div>
+            <div class="account">
+              <p class="username">@Archybella</p>
+              <p class="name card-text">Coolest Youtuber Ever</p>
+            </div>
+          </li>
+          <li class="trend trend-3">
+            <div class="gh-avatar3"></div>
+            <div class="account">
+              <p class="username">@INNOCENTMUSAKHI</p>
+              <p class="name card-text">Life Changing App</p>
+            </div>
+          </li>
+          <li class="trend trend-4">
+            <div class="gh-avatar"></div>
+            <div class="account">
+              <p class="username">Sirtuns</p>
+              <p class="name card-text">No Traffic Maker</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </main>
-
-
-
-
-</body>
+  </body>
 </html>

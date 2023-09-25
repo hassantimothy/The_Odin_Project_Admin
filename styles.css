@@ -25,8 +25,10 @@
 
 
 body {
-  width: 100vw;
-  height: 100vh;
+  background:#1f2937;
+  width: 90vw;
+  height: 90vh;
+  margin: 0 auto; /* Center the body horizontally within the viewport */
   display: grid;
   grid-template-areas:
     "drawer nav nav nav"
@@ -215,15 +217,21 @@ img {
 .content {
   grid-area: content;
   transition: var(--transition-notDrawer);
-  background-color: var(--content-gray);
+  background: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
+  /* background-color: var(--content-gray); */
   display: grid;
   /* padding: 1rem; */
+  padding-right: 1rem;
   grid-template-columns: 1fr auto;
   grid-template-rows: min-content 1fr;
   gap: 2rem;
   grid-template-areas:
     "projects announcements"
     "projects trending";
+}
+
+.content > div{
+  border: #084c61 solid 1px;
 }
 
 .content h3 {

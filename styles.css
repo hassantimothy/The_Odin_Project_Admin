@@ -2,29 +2,35 @@
   
   font-size: 16px;
   font-family: "Ubuntu Condensed", sans-serif;
-  --text-primary: black;
+  --text-primary: rgb(202, 196, 196);
   --text-secondary: white;
-  --back-ground-color: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
-  --transition-speed: 1s;
-  --drawer-width: clamp(210px, 22vw, 325px);
-
+  --back-ground-color: linear-gradient(to top right, #020624 30%, #030921 1%, #051c30, #0c1e34, #0f172a, #0f1b2f, #111827, #1e293b);
+  --transition-speed: 0.1s;
+  --drawer-width: clamp(200px, 20vw, 300px);
   --gh-avatar:  url("https://github.com/hassantimothy.png");
   --gh-avatar2: url("https://github.com/Archybella.png");
   --gh-avatar3: url("https://github.com/MeFerdi.png");
   --gh-avatar4: url("https://github.com/INNOCENTMUSAKHI.png");
 
+  --card-background: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #e0e0e0);;
+
   --content-gray: rgb(235, 235, 235);
-  --transition-notDrawer: margin-left 0.4s ease-in;
-  --transition-drawer: width 0.4s ease-in;
+  --transition-notDrawer: margin-left 0.1s ease-in;
+  --transition-drawer: width 0.1s ease-in;
+
+  --border-outline-color: #364252:
 }
 
 
 
 body {
-  background:#1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  background:#020624;
   width: 90vw;
   min-width: 700px;
-  height: 90vh;
+  height: 100vh;
   margin: 0 auto; /* Center the body horizontally within the viewport */
   display: grid;
   grid-template-areas:
@@ -48,7 +54,7 @@ body {
 
 .menuItem > h1 {
   display: none;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 
 .drawer:hover > .menuItem > h1 {
@@ -115,7 +121,7 @@ a {
   grid-template-columns: 1fr auto;
   grid-template-rows: min-content 1fr;
   gap: 2rem;
-  z-index: 1;
+  z-index: 0;
   grid-template-areas:
     "projects announcements"
     "projects trending";
@@ -134,12 +140,14 @@ a {
 
   grid-area: nav;
   transition: var(--transition-notDrawer);
-  /* background-color: var(--back-ground-color); */
-  background-color: #8578a3;
+  background-color: var(--back-ground-color);
+  /* background-color: #79787850; */
   padding: 1.5rem 3rem;
   padding: 1px;
   position: sticky;
   top: 0px;
+  z-index: 1;
+  backdrop-filter: blur(5px);
  
 }
 
@@ -148,11 +156,6 @@ a {
   grid-template-columns: 1fr max-content;
   margin-bottom: 2.5rem;
 }
-
-.topNav > div{
-  border: solid 1px purple;
-}
-
 
 
 .search {
@@ -292,12 +295,25 @@ img {
 
 .card {
   position: relative;
-  background-color: rgba(45, 187, 187, 0.459);
+  /* background-image: linear-gradient(to top right, #020624, #0f172a); */
+  background-color: var( --back-ground-color);
   padding: 2rem;
   border-radius: 0.6rem;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 /0.1);
   max-width: 30vw;
+  backdrop-filter: blur(px);
 }
+
+div.announcements ul.announcements-card {
+  position: relative;
+  background-image: var(--card-background);
+  padding: 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 /0.1);
+  max-width: 30vw;
+  backdrop-filter: blur(5px);
+}
+
 
 
 
@@ -315,10 +331,12 @@ img {
   padding-bottom: 2rem;
 }
 
-.projects .card {
-  background: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #f8fafc);
+ .projects .card {
+  background-color: var(--card-background);
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(5px);
+
 }
 .projects .card-title {
   font-size: 1.5rem;
@@ -372,6 +390,7 @@ img {
   padding: 1rem 0;
 }
 
+
 .announcement:first-child {
   padding-top: 0;
 }
@@ -406,6 +425,9 @@ img {
 
 .trending .card {
   padding: 1.5rem;
+  background: var(--card-background);
+  font-size: 4rem;
+
 }
 
 .trend {
@@ -426,7 +448,7 @@ img {
 }
 
 .trend .username {
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.15rem;
 }
 

@@ -1,3 +1,10 @@
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
 :root {
   
   font-size: 16px;
@@ -19,6 +26,12 @@
   --transition-drawer: width 0.1s ease-in;
 
   --border-outline-color: #364252:
+
+
+/* trial */
+
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
 }
 
 
@@ -290,33 +303,11 @@ img {
   
 }
 
-/* Card styling */
-
-
-.card {
-  position: relative;
-  /* background-image: linear-gradient(to top right, #020624, #0f172a); */
-  background-color: var( --back-ground-color);
-  padding: 2rem;
-  border-radius: 0.6rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 /0.1);
-  max-width: 30vw;
-  backdrop-filter: blur(px);
-}
-
-div.announcements ul.announcements-card {
-  position: relative;
-  background-image: var(--card-background);
-  padding: 2rem;
-  border-radius: 0.6rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 /0.1);
-  max-width: 30vw;
-  backdrop-filter: blur(5px);
-}
 
 
 
 
+/* CARD, CARDS IN PROJECT-CLASS STYLING  */
 
 .projects {
   grid-area: projects;
@@ -331,13 +322,6 @@ div.announcements ul.announcements-card {
   padding-bottom: 2rem;
 }
 
- .projects .card {
-  background-color: var(--card-background);
-  display: flex;
-  flex-direction: column;
-  backdrop-filter: blur(5px);
-
-}
 .projects .card-title {
   font-size: 1.5rem;
   font-weight: 500;
@@ -378,8 +362,117 @@ div.announcements ul.announcements-card {
 
 }
 
+/* CARDS ANIMATION STYLING */
+
+
+
+
+.card {
+  background: var(--back-ground-color);
+  width: var(--card-width);
+  height: var(--card-height);
+
+  /* padding: 3px; */
+
+
+  padding: 2rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5rem;
+  color: rgb(88 199 250 / 50%);
+  cursor: pointer;
+  flex-direction: column;
+  border-radius: 0.6rem;
+}
+
+
+.card:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+.card:hover:before, .card:hover:after {
+  animation: none;
+  opacity: 100;
+}
+
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #90d7eb, #31447f 43%, #5d2ea3);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 20.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #78cee6, #7591e6 43%, #ae80f4);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Announcement styling */
+
+div.announcements ul.announcements-card {
+  position: relative;
+  background-image: var(--card-background);
+  padding: 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 /0.1);
+  max-width: 30vw;
+  backdrop-filter: blur(5px);
+}
 
 .announcements {
   grid-area: announcements;
@@ -477,19 +570,13 @@ div.announcements ul.announcements-card {
   height: 40px;
 }
 
-
 img[src$=".svg"] {
  
   width: 2.5rem; 
   height: 2.5rem;
-  
 }
 
 img[src$=".svg"]:hover{
   opacity: 0.7;
   transform: scale(1.1);
-
-
-
 }
-

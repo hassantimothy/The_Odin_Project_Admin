@@ -1,0 +1,366 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  
+  font-size: 16px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  --text-primary: rgb(202, 196, 196);
+  --text-secondary: white;
+  --back-ground-color: linear-gradient(to top right, #020624 30%, #030921 1%, #051c30, #0c1e34, #0f172a, #0f1b2f, #111827, #1e293b);
+  --transition-speed: 0.1s;
+  --drawer-width: clamp(200px, 20vw, 300px);
+  --card-background: linear-gradient(to top right, #0f172a, #1f2937, #364252, #4b5563, #e0e0e0);;
+  --content-gray: rgb(235, 235, 235);
+  --transition-notDrawer: margin-left 0.1s ease-in;
+  --transition-drawer: width 0.1s ease-in;
+  --border-outline-color: #364252:
+
+/* trial */
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.book {
+  position: relative;
+  z-index: 0;
+}
+.navbar {
+  z-index: 10;
+}
+.book > button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: white;
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 900;
+}
+.book-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-top: 8px;
+  margin-bottom: 0.5rem;
+  font-style: oblique;
+  text-decoration: underline;
+  text-decoration-thickness: 0.15rem;
+}
+.book-author {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.book-pages {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.book-read {
+  display: flex;
+  align-items: center;
+}
+
+.book-read > input {
+  cursor: pointer;
+}
+
+.book-read-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+
+
+
+.edit-icon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 45px;
+  top: 15px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 30vh; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  padding: 5px 5px 5px 20px;
+  border: 1px solid #888;
+  width: 350px;
+  border-radius: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: auto;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-title {
+  font-size: xx-large;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.modal-form {
+  margin-right: auto;
+  padding-top: 5px;
+}
+.modal-form-input {
+  border: 0;
+  margin-left: auto;
+  margin-right: 20%;
+  background-color: rgba(44, 66, 164, 0.198);
+  padding: 0.5rem 1.5rem;
+  outline-color: var(--blue-1);
+  border-radius: 5px;
+}
+.modal-input-field {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.container {
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(44, 66, 164, 0.198);
+}
+
+.container:hover input ~ .checkmark {
+  background-color: var(--drawer-color);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: var(--blue-1);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.modal-read {
+  padding-top: 10px;
+}
+.submit-modal-form {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+
+
+
+
+.card.book {
+  border-left: 10px solid rgb(180, 1, 1) !important;
+  max-width: 300px;
+  background-color: rgba(34, 211, 238, 0.3) !important;
+
+}
+
+/* Style when the checkbox is checked */
+.card.book.read-checked {
+  border-left: 10px solid rgb(18, 157, 0) !important;
+
+  background: var(--back-ground-color);
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 2rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5rem;
+  color: rgb(88 199 250 / 50%);
+  cursor: pointer;
+  flex-direction: column;
+  border-radius: 0.6rem;
+}
+
+
+
+/* Style when the checkbox is not checked */
+.card.book.read-unchecked {
+  border-left: 10px solid rgb(214, 15, 8) !important;
+
+  background: var(--back-ground-color);
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 2rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5rem;
+  color: rgb(88 199 250 / 50%);
+  cursor: pointer;
+  flex-direction: column;
+  border-radius: 0.6rem;
+}
+
+
+
+
+
+/* CARDS ANIMATION STYLING */
+
+
+
+
+.card {
+ 
+}
+
+
+.card.book:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+
+.card.book:hover:before, .card:hover:after {
+  animation: none;
+  opacity: 100;
+}
+
+
+.card.book::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  /* background-image: linear-gradient(
+    var(--rotate)
+    , #e590eb, #74460e 43%, #881818); */
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 20.5s linear infinite;
+}
+
+.card.book.read-checked::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #78cee6, #7591e6 43%, #ae80f4);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+
+.card.book.read-unchecked::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #32c1b7, #cae675 43%, #80f48a);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
